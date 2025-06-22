@@ -1,0 +1,208 @@
+/* ======================start component======================  */
+:root {
+  --main-color: #fff;
+  --secondary-color: rgb(0, 120, 194);
+  --third-color: #ccc;
+  --button-color: orangered;
+  --main-padding: 5rem;
+  --main-transition: 0.5s;
+}
+* {
+  font-family: "Poppins", sans-serif;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background-image: url(../img/banner/2.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  color: var(--main-color);
+  text-align: center;
+  padding: 5rem 0;
+  h3 {
+    font-size: 5rem;
+    font-weight: 700;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+}
+.button {
+  padding: 1rem 2rem;
+  color: var(--main-color) !important;
+  background-color: var(--button-color) !important;
+  border: 3px solid var(--button-color) !important;
+}
+.button:hover {
+  background-color: transparent !important;
+  color: var(--button-color) !important;
+}
+/* ======================end component======================  */
+/* ======================start header======================  */
+header {
+  background-color: var(--main-color);
+  position: relative;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10rem;
+    .logo img {
+      height: 9rem;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      transition: var(--main-transition);
+      a {
+        font-size: 2rem;
+        margin: 1rem;
+        color: var(--secondary-color);
+        font-weight: 600;
+        transition: var(--main-transition);
+      }
+      a:hover {
+        color: var(--third-color);
+      }
+      a:last-child {
+        border-radius: 2rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        -ms-border-radius: 2rem;
+        -o-border-radius: 2rem;
+      }
+      
+    }
+    .fa-bars {
+      display: block;
+      font-size: 3rem;
+      padding: 0.5rem 1rem;
+    }
+    .fa-bars:focus,
+    .fa-bars:hover {
+      color: var(--secondary-color);
+    }
+    nav.active,
+    .fa-bars:hover ~ nav {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+@media (max-width: 767px) {
+  header .container nav {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 10rem);
+    align-items: center;
+    padding: 35px;
+    background-color: rgb(221 232 255);
+    transition: var(--main-transition);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 999;
+  }
+  header .container .show {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@media (min-width: 768px) {
+  header .container .fa-bars {
+    display: none;
+  }
+}
+/* ======================end header======================  */
+/* ======================start landing======================  */
+.landing {
+  height: calc(100vh - 10rem);
+  display: flex;
+  align-items: center;
+  background-image: url(../image/landing.jpeg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+  .container {
+    p {
+      color: var(--third-color);
+      font-size: 1.6rem;
+      width: 70rem;
+      max-width: 100%;
+    }
+    h1 {
+      font-size: 4rem;
+      color: var(--main-color);
+      margin: 3rem 0;
+      font-weight: 700;
+    }
+    a {
+      padding: 1.5rem 3rem;
+      display: block;
+      margin: 3rem 0;
+      width: fit-content;
+      font-size: 2rem;
+      font-weight: bold;
+      transition: var(--main-transition);
+    }
+  }
+}
+.landing::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 88, 129, 0.629);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+/* ======================end landing======================  */
